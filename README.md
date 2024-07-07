@@ -1,4 +1,5 @@
-# push-notification
+# push-notification 
+## Firebase Cloud Messaging API (HTTP v1) and send push notifications from your ASP.NET Core 6 application.
 
 ### Install the required NuGet packages:
 - dotnet add package Google.Apis.Auth
