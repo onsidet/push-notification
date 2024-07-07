@@ -5,7 +5,7 @@
 - dotnet add package Google.Apis.FirebaseCloudMessaging.v1
 ### Create a service to handle the FCM HTTP v1 requests
 - Create a new service class FcmLogic.cs:
-`
+```
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.FirebaseCloudMessaging.v1;
 using Google.Apis.FirebaseCloudMessaging.v1.Data;
@@ -47,31 +47,31 @@ public class FcmLogic
         }
     }
 }
-`
+```
 ### appsettings.json
-`
+```
   {
   "Fcm": {
     "ServiceAccountPath": "path/to/your/service-account-file.json",
     "ProjectId": "YOUR_PROJECT_ID"
   }
 }
-`
+```
 ### In Program.cs 
-`
+```
 builder.Services.AddSingleton<FcmService>();
-`
+```
 ### Create a new model NotificationRequest
-`
+```
 public class NotificationRequest
 {
     public string DeviceToken { get; set; }
     public string Title { get; set; }
     public string Body { get; set; }
 }
-`
+```
 ### Create a new controller NotificationController.cs:
-`
+```
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 [ApiController]
@@ -92,4 +92,4 @@ public class NotificationController : ControllerBase
         return Ok(new { message = "Notification sent successfully" });
     }
 }
-`
+```
